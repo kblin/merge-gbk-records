@@ -5,6 +5,8 @@ from Bio.SeqFeature import SeqFeature, FeatureLocation
 from Bio.SeqRecord import SeqRecord
 import sys
 
+from merge_gbk_records import __version__
+
 ALL_FRAME_STOP_MOTIF = 'TAGCTAACTGACCGTCAGTTAGCTA'
 
 
@@ -23,7 +25,7 @@ def main():
     parser.add_argument('-o', '--outfile',
                         default='stdout',
                         help="Output file to write to, or 'stdout' to write to terminal (default: %(default)s).")
-    parser.add_argument('-V', '--version', version='0.1.0', action='version')
+    parser.add_argument('-V', '--version', version=__version__, action='version')
 
     args = parser.parse_args()
 

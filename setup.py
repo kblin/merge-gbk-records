@@ -14,13 +14,13 @@ install_requires = [
 ]
 
 def read_version():
-    for line in open(os.path.join('ncbi_acc_download', '__init__.py'), 'r'):
+    for line in open(os.path.join('merge_gbk_records', '__init__.py'), 'r'):
         if line.startswith('__version__'):
             return line.split('=')[-1].strip().strip("'")
 
 setup(
     name='merge-gbk-records',
-    version='0.1.0',
+    version=read_version(),
     author='Kai Blin',
     author_email='kblin@biosustain.dtu.dk',
     description='Merge multiple GenBank files using a spacer sequence',

@@ -32,7 +32,7 @@ setup(
         ],
     },
     packages=['merge_gbk_records'],
-    url='https://github.com/kblin/merge-gbk-recods/',
+    url='https://github.com/kblin/merge-gbk-records/',
     license='Apache Software License',
     classifiers=[
         'Programming Language :: Python',

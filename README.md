@@ -35,6 +35,32 @@ version.
 
 ## Usage
 
+By default, `merge-gbk-records` will add a 20 kbp spacer of all `N`s and output
+the merged record on the terminal.
+
+```
+merge-gbk-records first.gbk second.gbk > merged.gbk
+```
+
+You can set different lengths using `-l` or `--length`. To use a 5 kbp spacer, use:
+```
+merge-gbk-records --length 5 first.gbk second.gbk > merged.gbk
+```
+
+You can select an all-frame stop codon spacer instead using `-s stop` or `--spacer stop`:
+```
+merge-gbk-records --spacer stop first.gbk second.gbk > merged.gbk
+```
+
+Instead of writing to stdout, you can also write to a file using `-o` or `--outfile`:
+```
+merge-gbk-records --outfile merged.gbk first.gbk second.gbk
+```
+
+To print help about the command, just run it with `-h` or `--help`:
+```
+merge-gbk-records --help
+```
 
 ## License
 All code is available under the Apache License version 2, see the

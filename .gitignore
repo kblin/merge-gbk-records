@@ -2,3 +2,4 @@
 build/*
 dist/*
 merge_gbk_records.egg-info/*
+*.gbk

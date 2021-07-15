@@ -1,6 +1,6 @@
 from argparse import ArgumentParser
 from Bio import SeqIO
-from Bio.Seq import Seq, UnknownSeq, Alphabet
+from Bio.Seq import Seq, UnknownSeq
 from Bio.SeqFeature import SeqFeature, FeatureLocation
 from Bio.SeqRecord import SeqRecord
 import sys
@@ -65,9 +65,9 @@ def merge(records, length=20, spacer='n'):
         raise ValueError("No records given")
 
     if spacer == 'stop':
-        spacer_seq = Seq(ALL_FRAME_STOP_MOTIF * 40 * length, Alphabet.generic_dna)
+        spacer_seq = Seq(ALL_FRAME_STOP_MOTIF * 40 * length)
     else:
-        spacer_seq = UnknownSeq(length * 1000, alphabet=Alphabet.generic_dna, character='N')
+        spacer_seq = Seq('N' * 1000)
 
     new_rec = records[0]
 
@@ -99,6 +99,7 @@ def merge(records, length=20, spacer='n'):
     new_rec.id = rec_id
     new_rec.name = rec_name
     new_rec.description = rec_desc
+    new_rec.annotations['molecule_type'] = "DNA"
     new_rec.annotations["date"] = date
     new_rec.annotations["source"] = source
     new_rec.annotations["organism"] = organism

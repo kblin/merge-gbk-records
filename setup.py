@@ -10,7 +10,7 @@ else:
     long_description = read('README.md')
 
 install_requires = [
-    'biopython',
+    'biopython >= 1.79',
 ]
 
 def read_version():

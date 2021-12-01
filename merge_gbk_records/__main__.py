@@ -67,7 +67,7 @@ def merge(records, length=20, spacer='n'):
     if spacer == 'stop':
         spacer_seq = Seq(ALL_FRAME_STOP_MOTIF * 40 * length)
     else:
-        spacer_seq = Seq('N' * 1000)
+        spacer_seq = Seq('N' * 1000 * length)
 
     new_rec = records[0]
 

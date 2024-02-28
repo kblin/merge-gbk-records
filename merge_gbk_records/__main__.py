@@ -17,7 +17,7 @@ def main():
     parser.add_argument('records', nargs='+',
                         help='A GenBank file to merge')
     parser.add_argument('-l', '--length',
-                        type=int, default=20,
+                        type=float, default=20,
                         help='Length of the spacer in kbp (default: %(default)s).')
     parser.add_argument('-s', '--spacer',
                         choices=('n', 'stop'), default='n',
@@ -87,7 +87,7 @@ def merge(records, length=20, spacer='n'):
     for i, rec in enumerate(records[1:]):
         spacer_id = 'spacer_{}'.format(i + 1)
 
-        spacer_feature = SeqFeature(FeatureLocation(0, length * 1000, 0),
+        spacer_feature = SeqFeature(FeatureLocation(0, int(length * 1000), 0),
                                     type='misc_feature', id=spacer_id,
                                     qualifiers={'note': [spacer_id]})
 
